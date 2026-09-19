@@ -1,0 +1,75 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html, body {
+    background-color: #ffffff;
+    color: #0a0a0a;
+    font-family: 'Times New Roman', Times, Georgia, serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  button, input, textarea, select {
+    font-family: 'Times New Roman', Times, Georgia, serif !important;
+  }
+
+  button {
+    background-color: transparent;
+  }
+
+  * {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+  }
+
+  ::selection {
+    background-color: #0a0a0a;
+    color: #faf9f6;
+  }
+
+  /* Accessible focus states */
+  *:focus-visible {
+    outline: 1.5px solid #0a0a0a;
+    outline-offset: 2px;
+  }
+
+  /* Subtle minimal scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d4d2cc;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a6a0;
+  }
+}
+
+/* Reduced motion query */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle editorial paper texture line */
+.editorial-grid-line {
+  background-image: linear-gradient(to right, #e6e4df 1px, transparent 1px);
+  background-size: 40px 100%;
+}

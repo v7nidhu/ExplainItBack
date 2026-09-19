@@ -1,0 +1,21 @@
+:root {
+  --font-serif: 'Times New Roman', Times, Georgia, serif;
+  --font-sans: 'Times New Roman', Times, Georgia, serif;
+  --font-mono: 'Times New Roman', Times, Georgia, serif;
+}
+
+* {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+}
+
+.font-serif {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+}
+
+.font-sans {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+}
+
+.font-mono {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+}

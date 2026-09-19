@@ -1,0 +1,10 @@
+{
+  "name": "ExplainItBack",
+  "description": "Don’t ask AI if you understand. Prove it. Explain a concept in your own words, find the hidden gaps in your reasoning, and master it through targeted challenges.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
