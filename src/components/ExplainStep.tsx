@@ -18,24 +18,13 @@ export const ExplainStep: React.FC<ExplainStepProps> = ({
   onSubmit,
   onBack,
 }) => {
-  const [text, setText] = useState(() => {
-    // Preserve draft from localStorage if available
-    const savedDraft = localStorage.getItem(`draft_${topic}`);
-    return savedDraft || initialExplanation;
-  });
+  const [text, setText] = useState(initialExplanation);
 
   const [isRecording, setIsRecording] = useState(false);
   const [speechSupported] = useState(() => {
     return typeof window !== 'undefined' && Boolean((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition);
   });
   const recognitionRef = useRef<any>(null);
-
-  // Autosave draft
-  useEffect(() => {
-    if (topic && text) {
-      localStorage.setItem(`draft_${topic}`, text);
-    }
-  }, [topic, text]);
 
   // Voice recognition setup
   useEffect(() => {
@@ -183,11 +172,6 @@ export const ExplainStep: React.FC<ExplainStepProps> = ({
                   <span>{isRecording ? 'Listening...' : 'Voice Input'}</span>
                 </button>
               )}
-            </div>
-
-            {/* Preserved status */}
-            <div className="text-[11px] text-ink-faint hidden sm:block">
-              Draft auto-preserved
             </div>
           </div>
         </div>
